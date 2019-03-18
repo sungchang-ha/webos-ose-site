@@ -2,7 +2,17 @@
 
 Welcome to the webOSE OSE website project! This is a work-in-progress effort for reimplementing the webosose.org site.
 
-## Dependencies
+## Contents
+
+* [Overview](#overview)
+* [Getting started](#getting-started)
+* [Directory structure](#directory-structure)
+
+## Overview
+
+We aim at transforming the site based on static site generator and modern hosting tools.
+
+### Dependencies
 
 This project is built upon the following tools and libraries.
 
@@ -10,7 +20,7 @@ This project is built upon the following tools and libraries.
 * CSS framework: Bulma
 * JS library: jQuery
 
-### Hugo
+#### Hugo
 
 [Hugo](https://gohugo.io/) is a static site generator written in Go.
 
@@ -19,11 +29,11 @@ This project uses a directory structure that requires Hugo's asset processing fe
 * [Hugo extended version (from v0.43 and higher)](https://gohugo.io/news/0.43-relnotes/)
 * [Hugo Pipes introduction](https://gohugo.io/hugo-pipes/introduction/#readout)
 
-### Bulma
+#### Bulma
 
 [Bulma](https://bulma.io/) is a free, open source CSS framework based on Flexbox.
 
-### jQuery
+#### jQuery
 
 [jQuery](https://jquery.com/) is a fast, small, and feature-rich JavaScript library.
 
@@ -45,7 +55,7 @@ Download and install the latest version of Git from the [official site](https://
 
 In the [Hugo releases](https://github.com/gohugoio/hugo/releases) page, download an extended version of Hugo (with the name in `hugo_extended_0.**_***-64bit.***` format) and install the package.
 
-**Note:** This site has been test with the extended version of Hugo v0.53 or higher.
+**Note:** This site has been tested with the extended version of Hugo v0.53. Netlify has issues with fetching v0.54, so we recommend that you use v0.53 to sync up the environment.
 
 For details on setup, you can refer to the following section for details:
 
@@ -60,7 +70,7 @@ For details on setup, you can refer to the following section for details:
 git clone [repository name]
 ```
 
-### Building the site
+### Previewing the site
 
 1. At the project root directory, enter the following command:
 
