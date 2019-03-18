@@ -1,0 +1,9 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bulma Version 0.7.4-->
+{{ $sass := resources.Get "styles.sass" }}
+{{ $style := $sass | resources.ToCSS }}
+<link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
+<!--<link rel="stylesheet" type="text/css" href="{{ "css/custom.css" | relURL }}">-->
+<!--<link rel="stylesheet" type="text/css" href="{{ "css/jquery.navgoco.css" | relURL }}">-->
+<!--<link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />-->

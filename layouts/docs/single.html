@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{ partial "head.html" . }}
+    <script>
+        $(document).ready(function() {            
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'                    
+                }
+            });
+        });
+
+    </script>
+    <body class="has-navbar-fixed-top">
+        {{ partial "header.html" . }}
+        <section class="hero is-black is-small">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">
+                    Documentation
+                    </h1>
+                </div>
+            </div>
+        </section>    
+        {{ partial "docs/top-menu.html" . }}
+        <section class="container">
+            <div class="columns verticals">
+                {{ partial "docs/sidebar.html" . }}
+                <div id="docsContent" class="content column is-8">
+                    {{ partial "breadcrumb.html" . }}
+                    <header class="title">
+                        {{ .Title }}
+                    </header>
+                    <p class="is-size-7">
+                        {{ .Date.Format .Site.Params.time_format }}
+                    </p>
+                    {{ .Content }}
+                </div>
+                <aside id="docsTOC" class="column is-2">                    
+                    <p class="title is-6">
+                        Contents
+                    </p>
+                    {{ .TableOfContents }}
+                </aside>
+            </div>
+        </section>
+        
+        {{ partial "footer.html" . }}
+    
+    </body>
+</html>

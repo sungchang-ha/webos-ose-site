@@ -1,0 +1,48 @@
+<!-- figure out the current section -->
+{{ $p := . }}
+{{ $docs := .Site.GetPage "section" "docs" }}
+{{ $menuSections := (where $docs.Sections ".Params.main_menu" true) }}
+{{ $.Scratch.Set "sectionName" "home" }}
+{{ range $menuSections }}
+    {{ $isDescendant := $p.IsDescendant . }}
+    {{ if $isDescendant }}         
+        {{ $.Scratch.Set "sectionName" (.LinkTitle | lower) }}        
+    {{ end }}    
+{{ end }}
+
+{{ $sidebar := (index .Site.Data.sidebars.docs  ($.Scratch.Get "sectionName") ) }}
+{{ $sections := index $sidebar "sections" }}
+
+<!-- build menu tree (as UL list) to implement sidebar menu based on Navgoco (https://plugins.jquery.com/navgoco/) -->
+<div id="docsSidebar" class="column is-2">
+    <ul id="mysidebar" class="nav">
+        {{ range $sections }}
+        <li>
+            <a href="#"><b>{{ .title }}</b></a>
+            <ul>
+            {{ range .sectionitems }}
+                <li {{ if eq $.Page.RelPermalink .url }} class="active"{{ end }}>
+                    <a href="{{ .url }}">{{ .title }}</a>
+                </li>
+                {{ range .subsections }}
+                <li class="subsections">
+                <a href="#">{{ .title }}</a>
+                <ul>
+                    {{ range .subsectionitems }}
+                        <li {{ if eq $.Page.RelPermalink .url }} class="active"{{ end }}>
+                            <a href="{{ .url }}">{{ .title }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+                </li>
+                {{ end }}
+            {{ end }}
+            </ul>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+
+<!-- from https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/_includes/sidebar.html -->
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>

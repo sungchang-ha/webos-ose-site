@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{ partial "head.html" . }}
+    <body class="has-navbar-fixed-top">
+    {{ partial "header.html" . }}
+    <section class="hero is-black is-small">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                Blog
+                </h1>
+            </div>
+        </div>
+    </section>
+    {{ block "main" . }}{{ end }}
+    {{ partial "footer.html" . }}
+    </body>
+</html>

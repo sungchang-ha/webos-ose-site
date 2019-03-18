@@ -1,0 +1,13 @@
+{{ $p := . }}
+{{ $docs := .Site.GetPage "section" "docs" }}
+{{ $menuSections := (where $docs.Sections ".Params.main_menu" true) }}
+<div class="container">
+    <div id="docsTopMenu" class="tabs">
+        <ul>
+            {{ range $menuSections }}
+            {{ $isDescendant := $p.IsDescendant . }}
+            <li><a href="{{ .RelPermalink }}"{{ if $isDescendant }} class="is-active"{{ end }}>{{ .LinkTitle | upper }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+</div>

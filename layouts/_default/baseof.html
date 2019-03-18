@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{ partial "head.html" . }}
+    <body class="has-navbar-fixed-top">
+    {{ partial "header.html" . }}
+    <section class="hero is-black is-medium">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                The new standard in &lt;insert industry here&gt;
+                </h1>
+                <h2 class="subtitle">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </h2>
+            </div>
+        </div>
+    </section>
+    {{ block "main" . }}{{ end }}
+    {{ partial "footer.html" . }}
+    </body>
+</html>

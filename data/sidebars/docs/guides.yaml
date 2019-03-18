@@ -1,0 +1,62 @@
+sections:
+- title: Getting Started
+
+  sectionitems:
+
+  - title: Overview
+    url: /docs/guides/getting-started/overview/
+    
+  - title: Build You First App
+    url: /docs/guides/getting-started/build-your-first-app/
+
+  - title: Introduction to Luna Service API
+    url: /docs/guides/getting-started/introduction-to-luna-service-api/
+
+- title: Setup  
+
+  sectionitems:
+
+  - title: Requirements
+    url: /docs/guides/setup/system-requirements/
+
+  - title: Building webOS OSE
+    url: /docs/guides/setup/building-webos-ose/
+
+  - title: Flashing webOS OSE
+    url: /docs/guides/setup/flashing-webos-ose/
+
+  - title: Setting Up Networking
+    url: /docs/guides/setup/setting-up-networking/
+
+  - title: Setting Up for Debugging
+    url: /docs/guides/setup/setting-up-debugging/
+
+- title: Core Topics  
+
+  sectionitems:
+
+  - title: Architecture Overview
+    url: /docs/guides/core-topics/architecture-overview/overview/  
+
+    subsections: 
+      - title: Application Management    
+
+        subsectionitems:
+
+          - title: Overview
+            url: /docs/guides/core-topics/application-management/overview/
+
+          - title: Application Lifecycle
+            url: /docs/guides/core-topics/application-management/app-lifecycle/
+
+  - title: Graphics and Input
+    url: /docs/guides/core-topics/graphics-input/overview/
+
+  - title: Multimedia
+    url: /docs/guides/core-topics/multimedia/overview/
+
+  - title: Connectivity
+    url: /docs/guides/core-topics/connectivity/overview/
+
+  - title: Localization
+    url: /docs/guides/core-topics/localization/localization-guide/               

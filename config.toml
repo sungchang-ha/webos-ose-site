@@ -1,0 +1,40 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Bulma Test"
+contentDir = "content/en"
+
+# Highlighting config.
+pygmentsCodeFences = true
+pygmentsUseClasses = false
+# See https://help.farbox.com/pygments.html
+pygmentsStyle = "friendly"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    url = "/about/"
+    weight = -130
+
+  [[menu.main]]
+    identifier = "docs"
+    name = "docs"
+    url = "/docs/"
+    weight = -120
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "blog"
+    url = "/blog/"
+    weight = -110
+
+  [[menu.main]]
+    identifier = "community"
+    name = "community"
+    url = "/community/"
+    weight = -100
+
+[params]
+
+time_format = "January 02, 2006"
